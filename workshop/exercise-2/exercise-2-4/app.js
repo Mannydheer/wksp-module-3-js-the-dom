@@ -58,17 +58,26 @@ const trackFull = track.offsetWidth;
 const lengthHop = (Math.floor(Math.random() * 100) / trackFull * 100);
 
 
+//Place before the function
+racers.forEach(function(eachRacer) {
+    hop(eachRacer)
+   
+})
 
-function hop(racer) {
-   let progress = racers.progress;
+
+
+function hop(tempRacer) {
+   let progress = tempRacer.progress;
+   
+   
 
    //what we need to do to change the progress.
    setInterval(function() {
         //check progress.
     if (progress < 101) {
         progress += (Math.floor(Math.random() * 100) / trackFull * 100);
-        let storeRacer = document.getElementById(`${racer.name}track`);
-        storeRacer.style.left = progress;
+        let storeRacer = document.getElementById(`${tempRacer.name}track`);
+        storeRacer.style.left = `${progress}%`;
         
         console.log("Set interval" + progress);
     }
@@ -80,9 +89,5 @@ function hop(racer) {
 
 //    setInterval(function(){ alert("Hello"); }, 3000);
 }
-console.log(racers+" foreach");
 
-racers.forEach(function(eachRacer) {
-    hop(eachRacer)
-    console.log(eachRacer + " foreachfunction")
-})
+
