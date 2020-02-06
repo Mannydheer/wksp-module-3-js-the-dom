@@ -15,6 +15,7 @@ for (i = 0; i < FROGS; i++) {
     let spanCreate = document.createElement("span");
     laneCreate.appendChild(spanCreate);
     laneCreate.id = `Lane-${i}`
+    spanCreate.id = `${racers[i].name}track` 
 
     // 
     spanCreate.innerText = racers[i].name + " " + racers[i].number;
@@ -39,7 +40,7 @@ for (i = 0; i < FROGS; i++) {
 // ### Exercise 2.3 -
 
 
-console.log(racers);
+
 
 // ------------------------------------------------------
 
@@ -54,6 +55,34 @@ const trackFull = track.offsetWidth;
 
 
 // this will give you the hop length. 
-const lengthHop = (Math.floor(Math.random() * 100) / trackWidth * 100);
-console.log(lengthHop);
+const lengthHop = (Math.floor(Math.random() * 100) / trackFull * 100);
 
+
+
+function hop(racer) {
+   let progress = racers.progress;
+
+   //what we need to do to change the progress.
+   setInterval(function() {
+        //check progress.
+    if (progress < 101) {
+        progress += (Math.floor(Math.random() * 100) / trackFull * 100);
+        let storeRacer = document.getElementById(`${racer.name}track`);
+        storeRacer.style.left = progress;
+        
+        console.log("Set interval" + progress);
+    }
+    else {
+        clearInterval()
+   }
+    
+   },2000);
+
+//    setInterval(function(){ alert("Hello"); }, 3000);
+}
+console.log(racers+" foreach");
+
+racers.forEach(function(eachRacer) {
+    hop(eachRacer)
+    console.log(eachRacer + " foreachfunction")
+})
