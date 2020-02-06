@@ -6,9 +6,13 @@ const mainHone = document.createElement('h1');
 mainHone.innerText = "The best How I Met Your Mother episode (according to fans)";
 document.getElementById('main').appendChild(mainHone);
 
+//class for H1
+
 //Style for mainHone
 
 mainHone.style.textAlign = "center";
+
+//PARAGRAPHS
 
 const mainParah =  document.createElement('p');
 mainParah.innerText = "As impossible as it seems to name just 1 of the 208 legendary episodes as the “best”, the fans have spoken and the highest rated episode is… wait for it…";
@@ -26,7 +30,7 @@ document.getElementById('main').appendChild(mainParahtwo);
 
 //ADD MAIN PICTURE with TEXT
 const firstImg =  document.createElement('img');
-firstImg.src = ("/workshop/exercise-1/exercise-1-1/images/robin-sparkles.jpg");
+firstImg.src = ("/workshop/exercise-1/exercise-1-3/images/robin-sparkles.jpg");
 document.getElementById('main').appendChild(firstImg);
 
 const paraOne =  document.createElement('p');
@@ -45,21 +49,41 @@ document.getElementById('main').appendChild(footerOne).href = "#";
 
 
 const linkJs = document.createElement('link');
-linkJs.href = './exercise-1-1/styles.css';
+linkJs.href = './styles.css';
 linkJs.rel = "stylesheet";
 linkJs.className = "css";
 document.querySelector('head').appendChild(linkJs);
 
+//STYLING. 
 
-//BACKGROUND IMAGE. 
+//body style
 
-// const backImg =  document.createElement('img');
-// backImg.src = ("/workshop/exercise-1/exercise-1-1/images/yellow-umbrella.jpg");
-// document.getElementById('main').appendChild(backImg);
+const body = document.querySelector("body");
+body.style.background = 'rgba(246,187,33, .8) url(./images/yellow-umbrella.jpg) no-repeat';
+body.style.backgroundSize = "100%";
+body.style.fontFamily = 'Playfair Display', serif;
+
+//main style
+
+const mainEle = document.getElementById('main');
+mainEle.style.background= "#fafafa;";
+mainEle.style.borderRadius = "4px";
+mainEle.style.boxShadow = "8px 10px 25px 0 rgba(128, 128, 128, .44)";
+mainEle.style.minWidth = "320px";
+mainEle.style.maxWidth = "600px";
+mainEle.style.margin = "35px";
+mainEle.style.padding = "4px 32px 32px";
+
+//h1 & h2
+mainHone.style.fontFamily = 'Open Sans', sans-serif;
+mainHone.style.textAlign = "center";
+mainHtwo.style.fontFamily = 'Open Sans', sans-serif;
+mainHtwo.style.textAlign = "center";
+
+//h2
+mainHtwo.style.textAlign = "left";
+
+//paragrapsh
 
 
-// document.body.style.background = ("#f3f3f3 url(/workshop/exercise-1/exercise-1-1/images/yellow-umbrella.jpg");
 
-// const bodyImg = document.querySelector('body');
-// bodyImg.style.backgroundImage = ("url(/workshop/exercise-1/exercise-1-1/images/yellow-umbrella.jpg");
-// bodyImg.style.padding = "50px";
