@@ -3,6 +3,7 @@ const frogStable = [
         name: 'Hopper',
         color: 'blue',
         number: '32',
+        
     },
     {
         name: 'Legs',

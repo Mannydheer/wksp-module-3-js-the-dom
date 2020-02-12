@@ -87,6 +87,15 @@ Instead, we will use these methods
 
 ```js
 // Example
+//can use either or.... but can use query selector for all of them. 
+document.getElementId('my-div')
+document.querySelector('body')
+//use query selector on ID
+document.querySelector('#my-div')
+document.querySelector('.my-class')
+//get div class bacon and ul of it. 
+document.querySelector('div.bacon > ul'); 
+document.querySelector('div.bacon ul.list'); 
 
 ```
 
@@ -100,11 +109,14 @@ Instead, we will use these methods
 
 You can modify the content of a leaf, an end node with 
 
-- [`.innerText()`](https://www.w3schools.com/jsref/prop_node_innertext.asp)
-- [`.innerHTML()`](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) 
+- [`.innerText`](https://www.w3schools.com/jsref/prop_node_innertext.asp)
+- [`.innerHTML`](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) 
 
 ```js
 // Example
+//ex: I want to modify my h1
+const myTitle = document.getelementById('my-title');
+myTitle.innerText = ('New title');
 
 ```
 
@@ -127,7 +139,19 @@ To add a new node to an HTML page, you need to do it in 3 steps.
 
 ```js
 // Example
+//paragraph var to make it less repetitive. 
+const paragraph = document.createElement('p'); // create a p tag
+paragraph 
+//created this element. 
+//add content to p
+paragraph.innertext = 'new hacker right here.';
 
+//If i want to add it to the DOM - the body tag of it. You need to target the one you want to grab.
+
+document.querySelector('body').appendChild(paragraph) // this will create
+
+
+pag=ragraph.id = 'new-id' // target attributes with dot.
 ```
 
 ---
@@ -152,6 +176,8 @@ We can style elements from JavaScript.
 const myDiv = document.getElementById('my-div');
 
 myDiv.style.background = "purple";
+//for styling border-radius, the javascript doesnt undrestand the dash. Need to write it like this:
+myDiv.style.borderRadius = '23px';
 ```
 
 ⚠️ Houston. We have a problem!
@@ -179,6 +205,8 @@ To modify a `classList`, we have a few methods we can call.
 ```js
 // Example
 myDiv.classList.add('primary');
+
+
 
 myDiv.classList.remove('secondary');
 
